@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StudentRequest;
+use App\Models\School;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -12,7 +13,8 @@ class StudentController extends Controller
 {
     public function create()
     {
-        return view('student.create');
+        $schools = School::get(['id', 'name']);
+        return view('student.create', compact('schools'));
     }
 
     public function store(StudentRequest $request)
@@ -21,6 +23,7 @@ class StudentController extends Controller
 
         try {
             Student::create([
+                'school_id' => $request->input('school_id'),
                 'name' => $request->input('name'),
                 'birth' => $request->input('birth'),
                 'sex' => $request->input('sex'),
@@ -42,7 +45,6 @@ class StudentController extends Controller
     public function students()
     {
         $students = Student::paginate(10);
-
         return view('student.students', compact('students'));
     }
 
@@ -78,22 +80,22 @@ class StudentController extends Controller
 
     public function delete($id)
     {
-        dd($id);
-
+        // dd($id);
         $student = Student::find($id);
         $student->delete();
-
-        return redirect()->back()->with('deleteStudent', 'Aluno deletado com sucesso.');
+        return redirect()->back()->with('success', 'Aluno deletado com sucesso.');
     }
 
     public function edit($id)
     {
         $student = Student::find($id);
-        return view('student.edit', compact('student'));
+        $schools = School::get(['id', 'name']);
+        return view('student.edit', compact('student', 'schools'));
     }
     
     public function update(StudentRequest $request, $id)
     {
+        // dd($request->all());
         $student = Student::find($id);
         $student->update([
             'name' => $request->input('name'),
@@ -106,14 +108,13 @@ class StudentController extends Controller
             'biography' => $request->input('biography'),
         ]);
 
-        return redirect()->route('students')->with('updated', 'Aluno atualizado com sucesso');
+        return redirect()->route('students')->with('success', 'Aluno atualizado com sucesso');
 
     }
 
     public function view($id)
     {
         $student = Student::find($id);
-
         return view('student.view', compact('student'));
     }
 }

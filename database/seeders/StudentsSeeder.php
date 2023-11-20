@@ -16,19 +16,25 @@ class StudentsSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 100; $i++) {
-            DB::table('students')->insert([
-                'name' => $faker->name,
-                'birth' => $faker->date,
-                'sex' => $faker->randomElement(['Male', 'Female']),
-                'cpf' => $faker->numerify('###########'),
-                'country' => $faker->country,
-                'state' => $faker->state,
-                'city' => $faker->city,
-                'biography' => $faker->text,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+        $schoolIds = DB::table('schools')->pluck('id')->toArray();
+
+        foreach ($schoolIds as $schoolId) {
+
+            for ($j = 0; $j < 10; $j++) {
+                DB::table('students')->insert([
+                    'school_id' => $schoolId,
+                    'name' => $faker->name,
+                    'birth' => $faker->date,
+                    'sex' => $faker->randomElement(['Male', 'Female']),
+                    'cpf' => $faker->numerify('###########'),
+                    'country' => $faker->country,
+                    'state' => $faker->state,
+                    'city' => $faker->city,
+                    'biography' => $faker->text,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
         }
     }
 }

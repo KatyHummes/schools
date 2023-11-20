@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('rede');
+            // a rede de ensino da escola
+            $table->string('nivel');
+            // se é fundamental, médio ou faculdade
+            $table->string('country');
+            $table->string('state');
+            $table->string('city');
             $table->timestamps();
         });
     }

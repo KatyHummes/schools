@@ -47,11 +47,11 @@
                     </button>
                     <ul id="dropdown-school" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="#"
+                            <a href="{{ route('school.create')}}"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Criar</a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="{{ route('schools')}}"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Visualizar</a>
                         </li>
                     </ul>

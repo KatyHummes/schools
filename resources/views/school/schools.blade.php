@@ -3,12 +3,13 @@
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         <header class="bg-white dark:bg-gray-800 shadow">
             <div class="py-6 px-4 sm:px-6 lg:px-8">
-                <h1 class="text-pink-600">Alunos</h1>
+                <h1 class="text-pink-600">Escola</h1>
             </div>
         </header>
         <div class="sm:px-6 lg:px-8 space-y-6 py-4">
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 @include('components.toast.success')
+
                 <div id="accordion-collapse" data-accordion="collapse" class="mb-8">
                     <h2 id="accordion-collapse-heading-1">
                         <button type="button" id="show-filter"
@@ -25,45 +26,54 @@
                     </h2>
                     <div id="accordion-collapse-body-1" class="hidden p-4 border-2 border-pink-200"
                         aria-labelledby="accordion-collapse-heading-1">
-                        <form method="get" action="{{ route('students.filter') }}" class="filter-form">
+                        <form method="get" action="{{ route('school.filter') }}" class="filter-form">
                             @csrf
                             <div
                                 class="grid grid-cols-2 gap-4 mt-4 text-xs text-gray-700 uppercase  dark:bg-gray-700 dark:text-gray-400">
-                                <div class="mb-4">
-                                    <label for="name">Nome:</label>
-                                    <input type="text" name="name" id="name" value="{{ request('name') }}"
-                                        class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <div>
+                                    <label for="school_id" class="block  mb-2 text-sm font-medium text-gray-900 dark:text-white">Escola</label>
+                                    <select id="school_id" name="school_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <option value="" selected>Selecione uma opção</option>
+                                        @foreach($schools as $school)
+                                            <option value="{{ $school->id }}">{{ $school->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('school_id'))
+                                        <span class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                            {{ $errors->first('school_id') }}
+                                        </span>
+                                    @endif
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="start_birth">Data de Nascimento (Início):</label>
-                                    <input type="date" name="start_birth" id="start_birth"
-                                        value="{{ request('start_birth') }}"
-                                        class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="sexo">Sexo:</label>
-                                    <select name="sex" id="sex"
+                                    <label for="rede">Rede:</label>
+                                    <select name="rede" id="rede"
                                         class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         <option value="" selected>Selecione...</option>
-                                        <option value="M" @if (request('sex') == 'M') selected @endif>Masculino
+                                        <option value="M" @if (request('rede') == 'M') selected @endif>Particular
                                         </option>
-                                        <option value="F" @if (request('sex') == 'F') selected @endif>Feminino
+                                        <option value="F" @if (request('rede') == 'F') selected @endif>Publica
                                         </option>
                                     </select>
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="final_birth">Data de Nascimento (Final):</label>
-                                    <input type="date" name="final_birth" id="final_birth"
-                                        value="{{ request('final_birth') }}"
+                                    <label for="nivel">Nível:</label>
+                                    <select name="nivel" id="nivel"
                                         class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <option value="" selected>Selecione...</option>
+                                        <option value="M" @if (request('nivel') == 'M') selected @endif>Fundamental
+                                        </option>
+                                        <option value="F" @if (request('nivel') == 'F') selected @endif>Médio
+                                        </option>
+                                        <option value="O" @if (request('nivel') == 'O') selected @endif>Faculdade
+                                        </option>
+                                    </select>
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="cpf">CPF:</label>
-                                    <input type="text" name="cpf" id="cpf" value="{{ request('cpf') }}"
+                                    <label for="country ">País:</label>
+                                    <input type="text" name="country" id="country" value="{{ request('country') }}"
                                         class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 </div>
 
@@ -83,16 +93,13 @@
                                     Escola
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-pink-600">
-                                    Nome
+                                    Rede
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-pink-600">
-                                    Nascimento
+                                    Nível
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-pink-600">
-                                    Sexo
-                                </th>
-                                <th scope="col" class="px-6 py-3 text-pink-600">
-                                    CPF
+                                    País
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-pink-600">
                                     Ações
@@ -101,29 +108,24 @@
                         </thead>
 
                         <tbody>
-                            @foreach ($students as $student)
+                            @foreach ($schools as $school)
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                     <th scope="row"
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $student->school->name }}
-                                    </th>
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $student->name }}
+                                        {{ $school->name }}
                                     </th>
                                     <td class="px-6 py-4">
-                                        {{ date_format(date_create($student->birth), 'd/m/Y') }}
-                                        {{-- {{ date('d-m-Y', strtotime($student->birth)) }} 2 formas de formatar a data --}}
+                                        {{ $school->rede }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $student->sex }}
+                                        {{ $school->nivel }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $student->cpf }}
+                                        {{ $school->country }}
                                     </td>
                                     <td class="px-6 py-4 mt-2 flex items-center justify-center gap-2">
 
-                                        <a href="{{ route('student.edit', $student->id) }}" class="h-full">
+                                        <a href="{{ route('school.edit', $school->id) }}" class="h-full">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor"
                                                 class="w-6 h-6 hover:text-pink-600">
@@ -131,7 +133,7 @@
                                                     d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                             </svg>
                                         </a>
-                                        <a href="{{ route('student.view', $student->id) }}">
+                                        <a href="{{ route('schoolview', $school->id) }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor"
                                                 class="w-6 h-6 hover:text-pink-600">
@@ -143,7 +145,7 @@
 
                                         </a>
 
-                                        <button class="show-modal" data-student-id="{{ $student->id }}">
+                                        <button class="show-modal" data-school-id="{{ $school->id }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -151,8 +153,8 @@
                                             </svg>
                                         </button>
 
-                                        <form id="delete-form-{{ $student->id }}"
-                                            action="{{ route('student.delete', $student->id) }}" method="POST"
+                                        <form id="delete-form-{{ $school->id }}"
+                                            action="{{ route('school.delete', $school->id) }}" method="POST"
                                             style="display: none;">
                                             @csrf
                                             @method('DELETE')
@@ -169,14 +171,15 @@
 
                     <div id="modal-container" class="modal-container">
                         <div class="modal flex flex-col justify-between">
-                            <p>Tem certeza de que deseja excluir este Aluno?</p>
+                            <p>Tem certeza de que deseja excluir esta Escola?</p>
                             <div class="flex justify-around mt-4 ">
                                 <button class="text-white bg-red-500 py-2 px-5 rounded-xl text-base font-medium" id="cancel-delete">Não</button>
                                 <button class="text-white bg-green-500 py-2 px-5 rounded-xl text-base font-medium" id="confirm-delete">Sim</button>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4">{{ $students->links() }}</div>
+
+                    <div class="mt-4">{{ $schools->links() }}</div>
                 </div>
             </div>
         </div>
@@ -193,13 +196,13 @@
 
         showModalButtons.forEach(button => {
             button.addEventListener('click', function() {
-                const studendId = this.getAttribute('data-student-id');
-                const studentDeleteForm = document.querySelector(`#delete-form-${studendId}`);
+                const schoolId = this.getAttribute('data-school-id');
+                const schoolDeleteForm = document.querySelector(`#delete-form-${schoolId}`);
 
                 modalContainer.style.display = 'block';
 
                 confirmDeleteButton.addEventListener('click', function() {
-                    studentDeleteForm.submit();
+                    schoolDeleteForm.submit();
                     modalContainer.style.display = 'none';
                 });
 
