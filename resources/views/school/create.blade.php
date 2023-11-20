@@ -67,7 +67,7 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">País</label>
                             <input type="text" id="country" name="country"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Digite o País" required>
+                                placeholder="Digite o País">
                             @if ($errors->has('country'))
                                 <span
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
@@ -81,7 +81,7 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Estado</label>
                             <input type="text" id="state" name="state"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Digite o Estado" required>
+                                placeholder="Digite o Estado">
                             @if ($errors->has('state'))
                                 <span
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
@@ -95,7 +95,7 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cidade</label>
                             <input type="text" id="city" name="city"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Digite a Cidade" required>
+                                placeholder="Digite a Cidade">
                             @if ($errors->has('city'))
                                 <span
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
