@@ -53,7 +53,7 @@ class SchoolController extends Controller
         }
     
         if ($request->filled('nivel')) {
-            $query->where('nivel', '>=', $request->input('nivel'));
+            $query->where('nivel', $request->input('nivel'));
         }      
     
         if ($request->filled('rede')) {

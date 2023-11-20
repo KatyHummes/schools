@@ -176,7 +176,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4">{{ $students->links() }}</div>
+                    <div class="mt-4"> {{ $students->appends(Request::all())->links() }}</div>
                 </div>
             </div>
         </div>
