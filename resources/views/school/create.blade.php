@@ -16,7 +16,7 @@
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>
-                            <input type="text" id="name" name="name"
+                            <input type="text" id="name" name="name" value="{{old('name')}}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o Nome">
                             @if ($errors->has('name'))
@@ -30,7 +30,7 @@
                         <div>
                             <label for="rede"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rede</label>
-                            <select id="rede" name="rede"
+                            <select id="rede" name="rede" value="{{old('rede')}}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option selected>Selecione uma opção</option>
                                 <option value="M">Particular</option>
@@ -47,7 +47,7 @@
                         <div>
                             <label for="nivel"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nível</label>
-                            <select id="nivel" name="nivel"
+                            <select id="nivel" name="nivel" value="{{old('nivel')}}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option selected>Selecione uma opção</option>
                                 <option value="M">Fundamental</option>
@@ -65,7 +65,7 @@
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="country"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">País</label>
-                            <input type="text" id="country" name="country"
+                            <input type="text" id="country" name="country" value="{{old('country')}}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o País">
                             @if ($errors->has('country'))
@@ -79,7 +79,7 @@
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="state"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Estado</label>
-                            <input type="text" id="state" name="state"
+                            <input type="text" id="state" name="state" value="{{old('state')}}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o Estado">
                             @if ($errors->has('state'))
@@ -93,7 +93,7 @@
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="city"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cidade</label>
-                            <input type="text" id="city" name="city"
+                            <input type="text" id="city" name="city" value="{{old('city')}}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite a Cidade">
                             @if ($errors->has('city'))

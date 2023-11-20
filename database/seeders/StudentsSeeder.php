@@ -25,7 +25,7 @@ class StudentsSeeder extends Seeder
                     'school_id' => $schoolId,
                     'name' => $faker->name,
                     'birth' => $faker->date,
-                    'sex' => $faker->randomElement(['Male', 'Female']),
+                    'sex' => $faker->randomElement(['Masculino', 'Feminino', 'Outro']),
                     'cpf' => $faker->numerify('###########'),
                     'country' => $faker->country,
                     'state' => $faker->state,

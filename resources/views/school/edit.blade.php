@@ -21,7 +21,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
                     <div class="mb-6">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nome</label>
-                        <input type="text" id="name" name="name" value="{{ $school->name }}"
+                        <input type="text" id="name" name="name" value="{{ old('name') ?? $school->name }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o Nome">
                         @if ($errors->has('name'))
@@ -34,7 +34,7 @@
 
                     <div class="mb-6">
                         <label for="rede" class="block mb-2 text-sm font-medium text-gray-900">Rede</label>
-                        <input type="text" id="rede" name="rede" value="{{ $school->rede }}"
+                        <input type="text" id="rede" name="rede" value="{{ old('rede') ?? $school->rede }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o rede">
                             @if ($errors->has('rede'))
@@ -46,7 +46,7 @@
                     </div>
                     <div class="mb-6">
                         <label for="nivel" class="block mb-2 text-sm font-medium text-gray-900">Nível</label>
-                        <input type="text" id="nivel" name="nivel" value="{{ $school->nivel }}"
+                        <input type="text" id="nivel" name="nivel" value="{{ old('nivel') ?? $school->nivel }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o nivel">
                             @if ($errors->has('nivel'))
@@ -59,7 +59,7 @@
                     
                     <div class="mb-6">
                         <label for="country" class="block mb-2 text-sm font-medium text-gray-900">País</label>
-                        <input type="text" id="country" name="country" value="{{ $school->country }}"
+                        <input type="text" id="country" name="country" value="{{ old('country') ?? $school->country }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o País">
                             @if ($errors->has('country'))
@@ -71,7 +71,7 @@
                     </div>
                     <div class="mb-6">
                         <label for="state" class="block mb-2 text-sm font-medium text-gray-900">Estado</label>
-                        <input type="text" id="state" name="state" value="{{ $school->state }}"
+                        <input type="text" id="state" name="state" value="{{ old('state') ?? $school->state }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o Estado">
                             @if ($errors->has('state'))
@@ -83,7 +83,7 @@
                     </div>
                     <div class="mb-6">
                         <label for="city" class="block mb-2 text-sm font-medium text-gray-900">Cidade</label>
-                        <input type="text" id="city" name="city" value="{{ $school->city }}"
+                        <input type="text" id="city" name="city" value="{{ old('city') ?? $school->city }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o Nome">
                             @if ($errors->has('city'))

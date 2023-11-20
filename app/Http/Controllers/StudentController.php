@@ -22,12 +22,13 @@ class StudentController extends Controller
         // dd($request->all());
 
         try {
+            $cpf = $this->removeCpfPunctuation($request->input('cpf'));
             Student::create([
                 'school_id' => $request->input('school_id'),
                 'name' => $request->input('name'),
                 'birth' => $request->input('birth'),
                 'sex' => $request->input('sex'),
-                'cpf' => $request->input('cpf'),
+                'cpf' => $cpf, 
                 'biography' => $request->input('biography'),
                 'country' => $request->input('country'),
                 'state' => $request->input('state'),
@@ -41,6 +42,11 @@ class StudentController extends Controller
             return redirect()->back()->with('error', 'Erro ao criar Aluno.');
         }
     }
+
+    private function removeCpfPunctuation($cpf)
+{
+    return preg_replace('/[^0-9]/', '', $cpf);
+}
 
     public function students()
     {
@@ -95,20 +101,26 @@ class StudentController extends Controller
     
     public function update(StudentRequest $request, $id)
     {
+        try {
         // dd($request->all());
+        $cpf = $this->removeCpfPunctuation($request->input('cpf'));
         $student = Student::find($id);
         $student->update([
             'name' => $request->input('name'),
             'birth' => $request->input('birth'),
             'sex' => $request->input('sex'),
-            'cpf' => $request->input('cpf'),
+            'cpf' => $cpf,
             'country' => $request->input('country'),
             'state' => $request->input('state'),
             'city' => $request->input('city'),
             'biography' => $request->input('biography'),
         ]);
-
-        return redirect()->route('students')->with('success', 'Aluno atualizado com sucesso');
+        return redirect()->back()->with('success', 'Aluno atualizado com sucesso!');
+    } catch (ValidationException $e) {
+        return redirect()->back()->withErrors($e->errors())->withInput();
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Erro ao atualizar Aluno.');
+    }
 
     }
 

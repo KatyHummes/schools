@@ -21,7 +21,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
                     <div class="mb-6">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nome</label>
-                        <input type="text" id="name" name="name" value="{{ $student->name }}"
+                        <input type="text" id="name" name="name" value="{{ old('name') ?? $student->name }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o Nome">
                         @if ($errors->has('name'))
@@ -56,28 +56,33 @@
                             @endforeach
                         </select>
                         @if ($errors->has('school_id'))
-                            <span
+                            <p
                                 class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('school_id') }}
-                            </span>
+                            </p>
                         @endif
                     </div>
 
-                    <div class="mb-6">
-                        <label for="sex" class="block mb-2 text-sm font-medium text-gray-900">Sexo</label>
-                        <input type="text" id="sex" name="sex" value="{{ $student->sex }}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                            placeholder="Digite o Sexo">
-                            @if ($errors->has('sex'))
+                    <div>
+                        <label for="sex"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sexo</label>
+                        <select id="sex" name="sex" value="{{old('sex') ?? $student->sex }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected value="{{ $student->sex }}">{{ $student->sex }}</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                            <option value="O">Outro</option>
+                        </select>
+                        @if ($errors->has('sex'))
                             <p
-                                class="mt-2 p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('sex') }}
                             </p>
                         @endif
                     </div>
                     <div class="mb-6">
                         <label for="cpf" class="block mb-2 text-sm font-medium text-gray-900">CPF</label>
-                        <input type="text" id="cpf" name="cpf" value="{{ $student->cpf }}"
+                        <input type="text" id="cpf" name="cpf" value="{{ old('cpf') ?? $student->cpf }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="000.000.000-00">
                             @if ($errors->has('cpf'))
@@ -89,7 +94,7 @@
                     </div>
                     <div class="mb-6">
                         <label for="country" class="block mb-2 text-sm font-medium text-gray-900">País</label>
-                        <input type="text" id="country" name="country" value="{{ $student->country }}"
+                        <input type="text" id="country" name="country" value="{{ old('country') ?? $student->country }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o País">
                             @if ($errors->has('country'))
@@ -101,7 +106,7 @@
                     </div>
                     <div class="mb-6">
                         <label for="state" class="block mb-2 text-sm font-medium text-gray-900">Estado</label>
-                        <input type="text" id="state" name="state" value="{{ $student->state }}"
+                        <input type="text" id="state" name="state" value="{{ old('state') ?? $student->state }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o Estado">
                             @if ($errors->has('state'))
@@ -113,7 +118,7 @@
                     </div>
                     <div class="mb-6">
                         <label for="city" class="block mb-2 text-sm font-medium text-gray-900">Cidade</label>
-                        <input type="text" id="city" name="city" value="{{ $student->city }}"
+                        <input type="text" id="city" name="city" value="{{ old('city') ?? $student->city }}"value="{{ old('city') ?? $student->city }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o Nome">
                             @if ($errors->has('city'))
@@ -123,10 +128,9 @@
                             </p>
                         @endif
                     </div>
-
-                    <div class=" md:col-span-2">
+                    <div class=" md:col-p-2">
                         <label for="biography" class="block mb-2 text-sm font-medium text-gray-900">Biografia</label>
-                        <textarea id="biography" rows="5" name="biography"300
+                        <textarea id="biography" rows="5" name="biography"300 value="{{ old('biography') ?? $student->biographycity }}"
                             class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border-gray-300 bg-gray-50 border focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
                             placeholder="Escreva um pouco sobre o Aluno!">{{ $student->biography }}</textarea>
                             @if ($errors->has('biography'))
