@@ -20,10 +20,10 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o Nome">
                             @if ($errors->has('name'))
-                                <span
+                                <p
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('name') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
@@ -32,10 +32,10 @@
                             <input type="date" id="birth" name="birth" value="{{old('birth')}}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             @if ($errors->has('birth'))
-                                <span
+                                <p
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('birth') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
                         <div>
@@ -47,9 +47,9 @@
                                 @endforeach
                             </select>
                             @if ($errors->has('school_id'))
-                                <span class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                <p class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('school_id') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
@@ -58,10 +58,10 @@
                                 <input type="text" id="cpf" name="cpf" placeholder="CPF"  value="{{old('cpf')}}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             @if ($errors->has('cpf'))
-                                <span
+                                <p
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('cpf') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
                         <div>
@@ -75,10 +75,10 @@
                                 <option value="O">Outro</option>
                             </select>
                             @if ($errors->has('sex'))
-                                <span
+                                <p
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('sex') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
@@ -88,10 +88,10 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o País">
                             @if ($errors->has('country'))
-                                <span
+                                <p
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('country') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
 
@@ -102,10 +102,10 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o Estado">
                             @if ($errors->has('state'))
-                                <span
+                                <p
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('state') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
                         <div class="relative z-0 w-full mb-6 group">
@@ -115,10 +115,10 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite a Cidade">
                             @if ($errors->has('city'))
-                                <span
+                                <p
                                     class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('city') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
                         <div>

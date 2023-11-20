@@ -16,38 +16,38 @@
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome</label>
-                            <input type="text" id="name" name="name" value="{{old('name')}}"
+                            <input type="text" id="name" name="name" value="{{ old('name') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o Nome">
                             @if ($errors->has('name'))
-                                <span
-                                    class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                <p
+                                    class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('name') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
-                        
+
                         <div>
                             <label for="rede"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rede</label>
-                            <select id="rede" name="rede" value="{{old('rede')}}"
+                            <select id="rede" name="rede" value="{{ old('rede') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option selected>Selecione uma opção</option>
                                 <option value="M">Particular</option>
                                 <option value="F">Publica</option>
                             </select>
                             @if ($errors->has('rede'))
-                                <span
-                                    class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                <p
+                                    class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('rede') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
 
                         <div>
                             <label for="nivel"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nível</label>
-                            <select id="nivel" name="nivel" value="{{old('nivel')}}"
+                            <select id="nivel" name="nivel" value="{{ old('nivel') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option selected>Selecione uma opção</option>
                                 <option value="M">Fundamental</option>
@@ -55,52 +55,52 @@
                                 <option value="O">Faculdade</option>
                             </select>
                             @if ($errors->has('nivel'))
-                                <span
-                                    class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                <p
+                                    class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('nivel') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
 
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="country"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">País</label>
-                            <input type="text" id="country" name="country" value="{{old('country')}}"
+                            <input type="text" id="country" name="country" value="{{ old('country') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o País">
                             @if ($errors->has('country'))
-                                <span
-                                    class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                <p
+                                    class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('country') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
 
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="state"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Estado</label>
-                            <input type="text" id="state" name="state" value="{{old('state')}}"
+                            <input type="text" id="state" name="state" value="{{ old('state') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite o Estado">
                             @if ($errors->has('state'))
-                                <span
-                                    class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                <p
+                                    class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('state') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
 
                         <div class="relative z-0 w-full mb-6 group">
                             <label for="city"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cidade</label>
-                            <input type="text" id="city" name="city" value="{{old('city')}}"
+                            <input type="text" id="city" name="city" value="{{ old('city') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Digite a Cidade">
                             @if ($errors->has('city'))
-                                <span
-                                    class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                <p
+                                    class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                     {{ $errors->first('city') }}
-                                </span>
+                                </p>
                             @endif
                         </div>
 

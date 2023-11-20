@@ -26,7 +26,7 @@
                             placeholder="Digite o Nome">
                         @if ($errors->has('name'))
                             <p
-                                class="mt-2 p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="mt-2 p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('name') }}
                             </p>
                         @endif
@@ -37,9 +37,9 @@
                         <input type="text" id="rede" name="rede" value="{{ old('rede') ?? $school->rede }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o rede">
-                            @if ($errors->has('rede'))
+                        @if ($errors->has('rede'))
                             <p
-                                class="mt-2 p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="mt-2 p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('rede') }}
                             </p>
                         @endif
@@ -49,22 +49,22 @@
                         <input type="text" id="nivel" name="nivel" value="{{ old('nivel') ?? $school->nivel }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o nivel">
-                            @if ($errors->has('nivel'))
+                        @if ($errors->has('nivel'))
                             <p
-                                class="mt-2 p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="mt-2 p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('nivel') }}
                             </p>
                         @endif
                     </div>
-                    
+
                     <div class="mb-6">
                         <label for="country" class="block mb-2 text-sm font-medium text-gray-900">País</label>
                         <input type="text" id="country" name="country" value="{{ old('country') ?? $school->country }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o País">
-                            @if ($errors->has('country'))
+                        @if ($errors->has('country'))
                             <p
-                                class="mt-2 p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="mt-2 p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('country') }}
                             </p>
                         @endif
@@ -74,9 +74,9 @@
                         <input type="text" id="state" name="state" value="{{ old('state') ?? $school->state }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o Estado">
-                            @if ($errors->has('state'))
+                        @if ($errors->has('state'))
                             <p
-                                class="mt-2 p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="mt-2 p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('state') }}
                             </p>
                         @endif
@@ -86,9 +86,9 @@
                         <input type="text" id="city" name="city" value="{{ old('city') ?? $school->city }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
                             placeholder="Digite o Nome">
-                            @if ($errors->has('city'))
+                        @if ($errors->has('city'))
                             <p
-                                class="mt-2 p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="mt-2 p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('city') }}
                             </p>
                         @endif
