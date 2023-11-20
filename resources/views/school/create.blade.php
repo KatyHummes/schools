@@ -32,9 +32,9 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rede</label>
                             <select id="rede" name="rede" value="{{ old('rede') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected>Selecione uma opção</option>
-                                <option value="M">Particular</option>
-                                <option value="F">Publica</option>
+                                <option selected value="">Selecione uma opção</option>
+                                <option value="Particular">Particular</option>
+                                <option value="Pública">Pública</option>
                             </select>
                             @if ($errors->has('rede'))
                                 <p
@@ -49,10 +49,10 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nível</label>
                             <select id="nivel" name="nivel" value="{{ old('nivel') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected>Selecione uma opção</option>
-                                <option value="M">Fundamental</option>
-                                <option value="F">Médio</option>
-                                <option value="O">Faculdade</option>
+                                <option selected value="">Selecione uma opção</option>
+                                <option value="Fundamental">Fundamental</option>
+                                <option value="Médio">Médio</option>
+                                <option value="Faculdade">Faculdade</option>
                             </select>
                             @if ($errors->has('nivel'))
                                 <p

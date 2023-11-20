@@ -31,27 +31,35 @@
                             </p>
                         @endif
                     </div>
-
-                    <div class="mb-6">
-                        <label for="rede" class="block mb-2 text-sm font-medium text-gray-900">Rede</label>
-                        <input type="text" id="rede" name="rede" value="{{ old('rede') ?? $school->rede }}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                            placeholder="Digite o rede">
+                    <div>
+                        <label for="rede"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rede</label>
+                        <select id="rede" name="rede" value="{{ old('rede') ?? $school->rede }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected value="">Selecione uma opção</option>
+                            <option value="Particular">Particular</option>
+                            <option value="Pública">Pública</option>
+                        </select>
                         @if ($errors->has('rede'))
                             <p
-                                class="mt-2 p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('rede') }}
                             </p>
                         @endif
                     </div>
-                    <div class="mb-6">
-                        <label for="nivel" class="block mb-2 text-sm font-medium text-gray-900">Nível</label>
-                        <input type="text" id="nivel" name="nivel" value="{{ old('nivel') ?? $school->nivel }}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                            placeholder="Digite o nivel">
+                    <div>
+                        <label for="nivel"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nível</label>
+                        <select id="nivel" name="nivel"  value="{{ old('nivel') ?? $school->nivel }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected value="{{ $school->nivel }}">Selecione uma opção</option>
+                            <option value="Fundamental">Fundamental</option>
+                            <option value="Médio">Médio</option>
+                            <option value="Faculdade">Faculdade</option>
+                        </select>
                         @if ($errors->has('nivel'))
                             <p
-                                class="mt-2 p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
+                                class="p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
                                 {{ $errors->first('nivel') }}
                             </p>
                         @endif
