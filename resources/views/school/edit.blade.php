@@ -36,9 +36,9 @@
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rede</label>
                         <select id="rede" name="rede" value="{{ old('rede') ?? $school->rede }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected value="">Selecione uma opção</option>
-                            <option value="Particular">Particular</option>
-                            <option value="Pública">Pública</option>
+                            <option selected value=""{{ old('rede', $school->rede) == '' ? 'selected' : '' }}>Selecione uma opção</option>
+                            <option value="Particular"{{ old('rede', $school->rede) == 'Particular' ? 'selected' : '' }}>Particular</option>
+                            <option value="Pública" {{ old('rede', $school->rede) == 'Pública' ? 'selected' : '' }}>Pública</option>
                         </select>
                         @if ($errors->has('rede'))
                             <p
@@ -52,10 +52,10 @@
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nível</label>
                         <select id="nivel" name="nivel"  value="{{ old('nivel') ?? $school->nivel }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected value="{{ $school->nivel }}">Selecione uma opção</option>
-                            <option value="Fundamental">Fundamental</option>
-                            <option value="Médio">Médio</option>
-                            <option value="Faculdade">Faculdade</option>
+                            <option selected value="{{ $school->nivel }}" {{ old('rede', $school->nivel) == '' ? 'selected' : '' }}>Selecione uma opção</option>
+                            <option value="Fundamental" {{ old('rede', $school->nivel) == 'Fundamental' ? 'selected' : '' }}>Fundamental</option>
+                            <option value="Médio" {{ old('rede', $school->nivel) == 'Médio' ? 'selected' : '' }}>Médio</option>
+                            <option value="Faculdade" {{ old('rede', $school->nivel) == 'Faculdade' ? 'selected' : '' }}>Faculdade</option>
                         </select>
                         @if ($errors->has('nivel'))
                             <p
@@ -64,7 +64,6 @@
                             </p>
                         @endif
                     </div>
-
                     <div class="mb-6">
                         <label for="country" class="block mb-2 text-sm font-medium text-gray-900">País</label>
                         <input type="text" id="country" name="country" value="{{ old('country') ?? $school->country }}"

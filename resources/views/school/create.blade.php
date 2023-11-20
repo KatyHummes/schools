@@ -32,9 +32,9 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rede</label>
                             <select id="rede" name="rede" value="{{ old('rede') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected value="">Selecione uma opção</option>
-                                <option value="Particular">Particular</option>
-                                <option value="Pública">Pública</option>
+                                <option selected value=""{{ old('rede') === null ? 'selected' : '' }}>Selecione uma opção</option>
+                                <option value="Particular"{{ old('rede') == 'Particular' ? 'selected' : '' }}>Particular</option>
+                                <option value="Pública"{{ old('rede') == 'Pública' ? 'selected' : '' }}>Pública</option>
                             </select>
                             @if ($errors->has('rede'))
                                 <p
@@ -49,10 +49,10 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nível</label>
                             <select id="nivel" name="nivel" value="{{ old('nivel') }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected value="">Selecione uma opção</option>
-                                <option value="Fundamental">Fundamental</option>
-                                <option value="Médio">Médio</option>
-                                <option value="Faculdade">Faculdade</option>
+                                <option selected value="" {{ old('nivel') === null ? 'selected' : '' }}>Selecione uma opção</option>
+                                <option value="Fundamental"{{ old('nivel') == 'Fundamental' ? 'selected' : '' }}>Fundamental</option>
+                                <option value="Médio"{{ old('nivel') == 'Médio' ? 'selected' : '' }}>Médio</option>
+                                <option value="Faculdade"{{ old('nivel') == 'Faculdade' ? 'selected' : '' }}>Faculdade</option>
                             </select>
                             @if ($errors->has('nivel'))
                                 <p
@@ -107,7 +107,7 @@
                     </div>
 
                     <button type="submit"
-                        class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                        class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar</button>
                 </form>
             </div>
         </div>
