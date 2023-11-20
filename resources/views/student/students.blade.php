@@ -47,9 +47,9 @@
                                     <select name="sex" id="sex"
                                         class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         <option value="" selected>Selecione...</option>
-                                        <option value="M" @if (request('sex') == 'M') selected @endif>Masculino
+                                        <option value="Masculino" @if (request('sex') == 'Masculino') selected @endif>Masculino
                                         </option>
-                                        <option value="F" @if (request('sex') == 'F') selected @endif>Feminino
+                                        <option value="Feminino" @if (request('sex') == 'Feminino') selected @endif>Feminino
                                         </option>
                                     </select>
                                 </div>

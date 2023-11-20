@@ -30,19 +30,10 @@
                             @csrf
                             <div
                                 class="grid grid-cols-2 gap-4 mt-4 text-xs text-gray-700 uppercase  dark:bg-gray-700 dark:text-gray-400">
-                                <div>
-                                    <label for="school_id" class="block  mb-2 text-sm font-medium text-gray-900 dark:text-white">Escola</label>
-                                    <select id="school_id" name="school_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        <option value="" selected>Selecione uma opção</option>
-                                        @foreach($schools as $school)
-                                            <option value="{{ $school->id }}">{{ $school->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @if ($errors->has('school_id'))
-                                        <span class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400">
-                                            {{ $errors->first('school_id') }}
-                                        </span>
-                                    @endif
+                                <div class="mb-4">
+                                    <label for="name">Escola:</label>
+                                    <input type="text" name="name" id="name" value="{{ request('name') }}"
+                                        class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 </div>
 
                                 <div class="mb-4">
@@ -50,9 +41,9 @@
                                     <select name="rede" id="rede"
                                         class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         <option value="" selected>Selecione...</option>
-                                        <option value="M" @if (request('rede') == 'M') selected @endif>Particular
+                                        <option value="Particular" @if (request('rede') == 'Particular') selected @endif>Particular
                                         </option>
-                                        <option value="F" @if (request('rede') == 'F') selected @endif>Publica
+                                        <option value="Pública" @if (request('rede') == 'Pública') selected @endif>Pública
                                         </option>
                                     </select>
                                 </div>
@@ -62,11 +53,11 @@
                                     <select name="nivel" id="nivel"
                                         class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         <option value="" selected>Selecione...</option>
-                                        <option value="M" @if (request('nivel') == 'M') selected @endif>Fundamental
+                                        <option value="Fundamental" @if (request('nivel') == 'Fundamental')  @endif>Fundamental
                                         </option>
-                                        <option value="F" @if (request('nivel') == 'F') selected @endif>Médio
+                                        <option value="Médio" @if (request('nivel') == 'Médio')  @endif>Médio
                                         </option>
-                                        <option value="O" @if (request('nivel') == 'O') selected @endif>Faculdade
+                                        <option value="Faculdade" @if (request('nivel') == 'Faculdade')  @endif>Faculdade
                                         </option>
                                     </select>
                                 </div>
@@ -179,7 +170,8 @@
                         </div>
                     </div>
 
-                    <div class="mt-4">{{ $schools->links() }}</div>
+                    <div class="mt-4">
+                        {{ $schools->appends(Request::all())->links() }}</div>
                 </div>
             </div>
         </div>
