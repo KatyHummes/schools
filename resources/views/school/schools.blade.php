@@ -41,7 +41,8 @@
                                     <select name="rede" id="rede"
                                         class=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                         <option value="" selected>Selecione...</option>
-                                        <option value="Particular" @if (request('rede') == 'Particular') selected @endif>Particular
+                                        <option value="Particular" @if (request('rede') == 'Particular') selected @endif>
+                                            Particular
                                         </option>
                                         <option value="Pública" @if (request('rede') == 'Pública') selected @endif>Pública
                                         </option>
@@ -164,8 +165,10 @@
                         <div class="modal flex flex-col justify-between">
                             <p>Tem certeza de que deseja excluir esta Escola?</p>
                             <div class="flex justify-around mt-4 ">
-                                <button class="text-white bg-red-500 py-2 px-5 rounded-xl text-base font-medium" id="cancel-delete">Não</button>
-                                <button class="text-white bg-green-500 py-2 px-5 rounded-xl text-base font-medium" id="confirm-delete">Sim</button>
+                                <button class="text-white bg-red-500 py-2 px-5 rounded-xl text-base font-medium"
+                                    id="cancel-delete">Não</button>
+                                <button class="text-white bg-green-500 py-2 px-5 rounded-xl text-base font-medium"
+                                    id="confirm-delete">Sim</button>
                             </div>
                         </div>
                     </div>
